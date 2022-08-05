@@ -1,0 +1,272 @@
+
+@font-face {
+  font-family: Marcellus;
+  src: url('Marcellus-Regular.ttf');
+}
+
+html {
+	font-family: Marcellus;
+	background: url("../img/BGplain.png");
+	color: #1b0f08;
+}
+
+.container {
+	width: 100%;
+}
+
+.row {
+	width: 100%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+ Navigation css */
+
+.navigation {
+  width: 100%;
+  height: 90px;
+  background: #1b0f08;
+  box-shadow:1px 1px 3px 1px black;
+  position: fixed;
+  z-index: 20;
+}
+
+.brand {
+  /*position: absolute;*/
+  padding: 20px;
+  float: left;
+  line-height: 90px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  width: 20%;
+}
+.brand a,
+.brand a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.login-register {
+  line-height: 90px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  width: 20%;
+}
+
+.nav-container {
+  /*max-width: 1000px;*/
+  /*margin: 0 auto;*/
+  width: 100%;
+}
+
+nav {
+  float: right;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+  display: block;
+  padding: 0 20px;
+  line-height: 90px;
+  background: #1b0f08;
+  color: #ffffff;
+  text-decoration: none;
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  background: #1b0f08;
+  color: #ffffff;
+}
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
+}
+nav ul li ul li {
+  min-width: 190px;
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: -0.5px;
+  right: 7px;
+  background: #1b0f08;
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 798px) {
+
+	.navigation {
+	  height: 70px;
+	}
+
+	.login-register {
+		display: none;
+	}
+
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: 799px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #ffffff;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: Marcellus;
+  background-color: #f5e4ca;
+  border: solid 1px #1b0f08;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-family: Marcellus;
+  font-size: 1em;
+  font-weight: bold;
+  color: #1b0f08;
+}
+
+input[type=submit] {
+  background-color: #bf4b1b;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  width: 100%;
+  font-family: Marcellus;
+}
+
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+/*.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}*/
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.footer-link {
+	color: white;
+	text-decoration: none;
+} 
