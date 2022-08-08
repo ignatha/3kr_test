@@ -69,8 +69,8 @@
     </nav>
 	</div>
     <div class="login-register">
-      <a href="#!"><img src="assets/img/login.png" style="width: 30%;" /></a>
-      <a href="#!"><img src="assets/img/register.png" style="width: 30%;" /></a>
+      <a href="{{route('login.3kr')}}"><img src="assets/img/login.png" style="width: 30%;" /></a>
+      <a href="{{route('register')}}"><img src="assets/img/register.png" style="width: 30%;" /></a>
     </div>
   </div>
 </section>
